@@ -48,7 +48,7 @@ async def show_history_command(message: types.Message, regexp):
         await message.answer(answer)
         return
 
-    await message.answer_photo(buffer)
+    await message.answer_photo(buffer, caption='History graph')
 
 
 @disp.message_handler()
