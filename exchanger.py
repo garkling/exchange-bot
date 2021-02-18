@@ -67,7 +67,7 @@ class Exchanger:
         else:
             converted = self.convert_to_usd(value, from_codename)
 
-        return Converted(from_codename, to, symbol, converted, (len(symbol) == 1))
+        return Converted(from_codename, to, symbol, round(converted, 2), (len(symbol) == 1))
 
     def convert_to_usd(self, value: float, from_: str) -> float:
         rate = self.rates[self.codenames.index(from_)]
